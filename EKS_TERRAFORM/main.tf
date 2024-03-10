@@ -88,6 +88,8 @@ resource "aws_eks_node_group" "example" {
   node_role_arn   = aws_iam_role.example1.arn
   subnet_ids      = data.aws_subnets.public.ids
 
+  availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c", "us-east-1d", "us-east-1f"]
+
   scaling_config {
     desired_size = 1
     max_size     = 2
